@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/home/jynd/anaconda/bin/python
+
 # -*- coding: utf-8 -*-
 
 import numpy as np
@@ -39,12 +40,12 @@ xtick_labels = (r"$\mu - 3 \sigma$",
 fig = plt.figure(1, figsize=(6, 4))
 ax = fig.add_subplot(111)
 
-ax.axhline(0, color='k')
+ax.axhline(0, color='b')
 
-ax.fill_between(x_full, y_full, edgecolor='k', facecolor='0.8')
-ax.fill_between(x_sigma3, y_sigma3, y2=0, edgecolor='', facecolor='0.6')
-ax.fill_between(x_sigma2, y_sigma2, y2=0, edgecolor='', facecolor='0.4')
-ax.fill_between(x_sigma1, y_sigma1, y2=0, edgecolor='', facecolor='0.2')
+ax.fill_between(x_full, y_full, edgecolor='b', facecolor='#00FFFF')
+ax.fill_between(x_sigma3, y_sigma3, y2=0, edgecolor='', facecolor='#0066FF')
+ax.fill_between(x_sigma2, y_sigma2, y2=0, edgecolor='', facecolor='#0033FF')
+ax.fill_between(x_sigma1, y_sigma1, y2=0, edgecolor='', facecolor='#0000FF')
 
 ax.set_xticks(xticks)
 ax.set_xticklabels(xtick_labels, rotation=90)
@@ -53,9 +54,10 @@ ax.set_yticks([])
 ax.set_xlim(-4, 4)
 ax.set_ylim(-0.1, 1.1)
 
-ax.text(0, 0.4, '68%', fontsize=12, color='w', va='center', ha='center')
+ax.text(0, 0.4, '68%', fontsize=17, color='w', va='center', ha='center')
 
-fig.subplots_adjust(bottom=0.30)
+fig.subplots_adjust(bottom=0.20)
 
-# ax.tick_params(axis='x', which='major', labelsize=10, top='off')
+ax.tick_params(axis='x', which='major', labelsize=13, top='off')
+plt.text(0.55,0.95,'Jorge Gacitua\njorge.gacitua@dgf.uchile.cl',fontsize=10)
 plt.savefig('gauss.png')
